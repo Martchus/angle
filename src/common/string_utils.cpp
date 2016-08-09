@@ -141,7 +141,7 @@ bool ReadFileToString(const std::string &path, std::string *stringOut)
 Optional<std::vector<wchar_t>> WidenString(size_t length, const char *cString)
 {
     std::vector<wchar_t> wcstring(length + 1);
-#if !defined(ANGLE_PLATFORM_WINDOWS)
+#if !defined(ANGLE_PLATFORM_WINDOWS) || defined(ANGLE_WINDOWS_XP_SUPPORT)
     size_t written = mbstowcs(wcstring.data(), cString, length + 1);
     if (written == 0)
     {
