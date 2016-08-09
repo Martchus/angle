@@ -9,14 +9,14 @@
 #ifndef LIBGLESV2_EXPORT_H_
 #define LIBGLESV2_EXPORT_H_
 
-#if defined(_WIN32)
+#if defined(_WIN32) && !defined(ANGLE_STATIC)
 #if defined(LIBGLESV2_IMPLEMENTATION) || defined(LIBANGLE_IMPLEMENTATION) || \
     defined(LIBANGLE_UTIL_IMPLEMENTATION)
 #       define ANGLE_EXPORT __declspec(dllexport)
 #   else
 #       define ANGLE_EXPORT __declspec(dllimport)
 #   endif
-#elif defined(__GNUC__)
+#elif defined(__GNUC__) && !defined(ANGLE_STATIC)
 #if defined(LIBGLESV2_IMPLEMENTATION) || defined(LIBANGLE_IMPLEMENTATION) || \
     defined(LIBANGLE_UTIL_IMPLEMENTATION)
 #       define ANGLE_EXPORT __attribute__((visibility ("default")))
