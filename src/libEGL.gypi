@@ -41,6 +41,9 @@
                     'ldflags': [ '-Wl,--out-implib,libEGL.dll.a ../src/libEGL/libEGL.def' ],
                 }],
             ],
+            'libraries': [
+                '-ldxguid -ld3d9 -lgdi32'
+            ]
         },
     ],
 }

@@ -1059,6 +1059,9 @@
                     'ldflags': [ '-Wl,--out-implib,libGLESv2.dll.a ../src/libGLESv2/libGLESv2.def' ],
                 }],
             ],
+            'libraries': [
+                '-ldxguid -ld3d9 -lgdi32'
+            ]
         },
     ],
 }
