@@ -687,6 +687,9 @@
             'libGLESv2/libGLESv2.def',
             'libGLESv2/libGLESv2.rc',
             'libGLESv2/resource.h',
+            '../include/GLSLANG/ShaderLang.h',
+            '../include/GLSLANG/ShaderVars.h',
+            'libGLESv2/entry_points_shader.cpp'
         ],
         'libegl_sources':
         [
@@ -1036,7 +1039,7 @@
         {
             'target_name': 'libGLESv2',
             'type': '<(angle_gl_library_type)',
-            'dependencies': [ 'libANGLE', 'angle_common' ],
+            'dependencies': [ 'translator', 'libANGLE', 'angle_common' ],
             'includes': [ '../build/common_defines.gypi', ],
             'sources':
             [
