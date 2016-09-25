@@ -34,6 +34,12 @@
                 {
                     'msvs_requires_importlibrary' : 'true',
                 }],
+                ['TARGET=="win32"', {
+                    'ldflags': [ '-Wl,--out-implib,libEGL.dll.a ../../../src/libEGL/libEGL_mingw32.def' ],
+                }],
+                ['TARGET=="win64"', {
+                    'ldflags': [ '-Wl,--out-implib,libEGL.dll.a ../../../src/libEGL/libEGL.def' ],
+                }],
             ],
         },
     ],
