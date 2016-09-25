@@ -9,6 +9,17 @@
 // as defined in ShaderLang.h
 //
 
+// ensure this gets exported
+#ifndef COMPONENT_BUILD
+#define COMPONENT_BUILD
+#endif
+#ifdef ANGLE_TRANSLATOR_STATIC
+#undef ANGLE_TRANSLATOR_STATIC
+#endif
+#ifndef ANGLE_TRANSLATOR_IMPLEMENTATION
+#define ANGLE_TRANSLATOR_IMPLEMENTATION
+#endif
+
 #include "GLSLANG/ShaderLang.h"
 
 #include "compiler/translator/Compiler.h"
