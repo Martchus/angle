@@ -228,16 +228,21 @@ typedef unsigned short int     khronos_uint16_t;
  * to be the only LLP64 architecture in current use.
  */
 #ifdef _WIN64
-typedef signed   long long int khronos_intptr_t;
+//typedef signed   long long int khronos_intptr_t;
 typedef unsigned long long int khronos_uintptr_t;
-typedef signed   long long int khronos_ssize_t;
+//typedef signed   long long int khronos_ssize_t;
 typedef unsigned long long int khronos_usize_t;
 #else
-typedef signed   long  int     khronos_intptr_t;
+//typedef signed   long  int     khronos_intptr_t;
 typedef unsigned long  int     khronos_uintptr_t;
-typedef signed   long  int     khronos_ssize_t;
+//typedef signed   long  int     khronos_ssize_t;
 typedef unsigned long  int     khronos_usize_t;
 #endif
+
+// Make this compatible with QTOpenGL and QtWebkit.
+// It seems that ptrdiff_t is the right size on WIN32 and WIN64.
+typedef ptrdiff_t khronos_intptr_t;
+typedef ptrdiff_t khronos_ssize_t;
 
 #if KHRONOS_SUPPORT_FLOAT
 /*
