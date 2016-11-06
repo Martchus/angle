@@ -8,7 +8,7 @@
         'angle_code': 1,
         'angle_gen_path': '<(SHARED_INTERMEDIATE_DIR)/angle',
         'angle_id_script_base': 'commit_id.py',
-        'angle_id_script': '<(angle_gen_path)/<(angle_id_script_base)',
+        'angle_id_script': '<(angle_id_script_base)',
         'angle_id_header_base': 'commit.h',
         'angle_id_header': '<(angle_gen_path)/id/<(angle_id_header_base)',
         'angle_use_commit_id%': '<!(python <(angle_id_script_base) check ..)',
@@ -187,7 +187,7 @@
                             'action_name': 'Generate ANGLE Commit ID Header',
                             'message': 'Generating ANGLE Commit ID',
                             # reference the git index as an input, so we rebuild on changes to the index
-                            'inputs': [ '<(angle_id_script)', '<(angle_path)/.git/index' ],
+                            'inputs': [ '<(angle_id_script)', '<(angle_path)/../.git/index' ],
                             'outputs': [ '<(angle_id_header)' ],
                             'msvs_cygwin_shell': 0,
                             'action':
