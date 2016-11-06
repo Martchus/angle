@@ -1035,13 +1035,6 @@
                         'ANGLE_ENABLE_NULL',
                     ],
                 }],
-                ['angle_build_winrt==0 and OS=="win"',
-                {
-                    'dependencies':
-                    [
-                        'copy_compiler_dll'
-                    ],
-                }],
                 ['angle_build_winrt==1',
                 {
                     'msvs_requires_importlibrary' : 'true',

@@ -60,17 +60,6 @@ config("extra_warnings") {
   }
 }
 
-if (is_win) {
-  copy("copy_compiler_dll") {
-    sources = [
-      "$windows_sdk_path/Redist/D3D/$target_cpu/d3dcompiler_47.dll",
-    ]
-    outputs = [
-      "$root_out_dir/d3dcompiler_47.dll",
-    ]
-  }
-}
-
 angle_undefine_configs = [ "//build/config/compiler:default_include_dirs" ]
 
 # Holds the shared includes so we only need to list them once.
@@ -396,12 +385,6 @@ static_library("libANGLE") {
     ":libANGLE_config",
     ":internal_config",
   ]
-
-  if (is_win) {
-    data_deps = [
-      ":copy_compiler_dll",
-    ]
-  }
 }
 
 config("shared_library_public_config") {
